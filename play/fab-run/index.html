@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fab Run</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Start screen: dark, pick a major, start the run -->
+  <section id="screen-start" class="screen dark active">
+    <div class="inner">
+      <h1 id="start-title"></h1>
+      <p id="start-tagline" class="tagline"></p>
+      <p id="start-intro"></p>
+      <div id="major-buttons"></div>
+      <p id="start-pick" class="hint"></p>
+      <button id="start-button" disabled></button>
+    </div>
+  </section>
+
+  <!-- Station screen: light, reused by every station -->
+  <section id="screen-station" class="screen light">
+    <div class="inner">
+      <h2 id="station-name"></h2>
+      <p id="station-what"></p>
+      <div id="station-drawing"></div>
+
+      <div id="station-decision">
+        <p id="station-task" class="task"></p>
+        <p id="station-prompt"></p>
+        <div id="option-buttons"></div>
+      </div>
+
+      <div id="station-feedback" class="hidden">
+        <p id="feedback-text"></p>
+        <p id="feedback-chips" class="chips"></p>
+        <button id="continue-button"></button>
+      </div>
+
+      <div class="job-card">
+        <p id="job-heading" class="job-heading"></p>
+        <h3 id="job-title"></h3>
+        <p id="job-what"></p>
+        <p id="job-majors"></p>
+        <p id="job-yours" class="yours hidden"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results screen: dark, yield and verdict -->
+  <section id="screen-results" class="screen dark">
+    <div class="inner">
+      <h2 id="results-heading"></h2>
+      <p id="results-yield-label" class="yield-label"></p>
+      <p id="results-yield" class="big-number"></p>
+      <p id="results-verdict"></p>
+      <p id="results-time"></p>
+      <button id="play-again-button"></button>
+    </div>
+  </section>
+
+  <script src="content.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

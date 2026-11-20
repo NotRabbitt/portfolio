@@ -1,0 +1,119 @@
+{
+  "owner": {
+    "name": "NotRabbitt",
+    "github": "NotRabbitt",
+    "line": "I build the study tools and games I wish my classes came with."
+  },
+  "projects": [
+    {
+      "id": "better-canvas",
+      "name": "Better Canvas",
+      "status": "Working build, v0.1.11",
+      "pitch": "A read-only Canvas dashboard that answers one question: what do I do next?",
+      "blurb": [
+        "Lists everything due in the next 14 days, from overdue to later.",
+        "Puts the next deadline on one red note with a live countdown.",
+        "Shows how a score on any assignment would move your grade."
+      ],
+      "links": {
+        "try": "media/better-canvas/hero.webm",
+        "feedback": "https://github.com/{github}/portfolio/issues/new?title=Feedback%20on%20Better%20Canvas",
+        "tryLabel": "Watch demo"
+      },
+      "media": {
+        "image": "media/better-canvas/hero-1280.webp",
+        "imageSmall": "media/better-canvas/hero-640.webp",
+        "video": "media/better-canvas/hero.webm",
+        "alt": "Better Canvas in its Typewriter theme on demo data: a red note for a late assignment beside a list of what is due.",
+        "frame": "laptop"
+      },
+      "theme": {
+        "background": "#EDE7DB",
+        "text": "#2B2620",
+        "accent": "#FF671D",
+        "font": "'Courier Prime', 'Courier New', monospace",
+        "surface": "#FAF6EC",
+        "line": "#CFC5B2",
+        "stamp": "#011E41",
+        "dot": "rgba(60, 48, 34, .22)",
+        "bezel": "#23201C",
+        "texture": "dot-grid",
+        "reveal": "type",
+        "statusStyle": "stamp"
+      }
+    },
+    {
+      "id": "desk",
+      "name": "Desk",
+      "status": "Working build, v0.1.9",
+      "pitch": "A desk app that turns your calendar, Canvas and notes into one calm plan for today.",
+      "blurb": [
+        "Pulls classes and due dates from your calendar, Canvas and notes.",
+        "Picks what to work on next and runs a 45-minute focus timer.",
+        "Turns finished work into XP, quests and boss fights."
+      ],
+      "links": {
+        "try": "media/desk/hero.webm",
+        "feedback": "https://github.com/{github}/portfolio/issues/new?title=Feedback%20on%20Desk",
+        "tryLabel": "Watch demo"
+      },
+      "media": {
+        "image": "media/desk/hero-1280.webp",
+        "imageSmall": "media/desk/hero-640.webp",
+        "video": "media/desk/hero.webm",
+        "alt": "Desk's Today page on a made-up student's data: the date, a timeline of the day, two suggestions for what to do next and a list of tasks.",
+        "frame": "laptop"
+      },
+      "theme": {
+        "background": "#0F0F0F",
+        "text": "#F2F2F2",
+        "accent": "#F2F2F2",
+        "onAccent": "#161616",
+        "font": "'Schibsted Grotesk', system-ui, sans-serif",
+        "headFont": "'Fraunces', Georgia, serif",
+        "headWeight": 400,
+        "surface": "#1F1F1F",
+        "line": "#3A3A3A",
+        "stamp": "#D6D6D6",
+        "bezel": "#333333",
+        "texture": "particles",
+        "reveal": "circle",
+        "statusStyle": "chip"
+      }
+    },
+    {
+      "id": "fab-run",
+      "name": "Fab Run",
+      "status": "Early build, station 1 of 5",
+      "pitch": "A web game about how a chip gets made, and who makes it.",
+      "blurb": [
+        "Hands you one wafer and a chip factory to run it through.",
+        "Starts at deposition, where your call sets the film thickness.",
+        "Shows the real job behind the station. Four more stations are planned."
+      ],
+      "links": {
+        "try": "play/fab-run/",
+        "feedback": "https://github.com/{github}/portfolio/issues/new?title=Feedback%20on%20Fab%20Run"
+      },
+      "media": {
+        "image": "media/fab-run/hero-640.webp",
+        "video": "media/fab-run/hero.webm",
+        "alt": "Fab Run on a phone, at the deposition station: a diagram of film building up on a wafer and a question about how long to run the tool.",
+        "frame": "phone"
+      },
+      "theme": {
+        "background": "#FBF6F1",
+        "text": "#1F1E24",
+        "accent": "#FF671D",
+        "font": "'Segoe UI', Roboto, Arial, sans-serif",
+        "surface": "#FFFFFF",
+        "line": "#EAD9CB",
+        "stamp": "#C4460A",
+        "bezel": "#1F1E24",
+        "texture": "wafer",
+        "reveal": "none",
+        "statusStyle": "chip"
+      }
+    }
+  ]
+}

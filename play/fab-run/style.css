@@ -1,0 +1,226 @@
+/* Fab Run styles. Dark start and results screens, light station screens,
+   Orange #FF671D as the accent. Phone first: big buttons, no hover needed. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+/* Each screen fills the phone. Only the .active one shows. */
+.screen {
+  display: none;
+  min-height: 100vh;
+  padding: 28px 16px;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* Keeps lines readable on a laptop */
+.inner {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* Dark screens: start and results */
+.dark {
+  background: #16161c;
+  color: #f2f2f2;
+}
+
+/* Light screens: stations */
+.light {
+  background: #faf7f4;
+  color: #222222;
+}
+
+h1 {
+  font-size: 42px;
+  margin: 36px 0 4px;
+}
+
+h2 {
+  margin: 0 0 10px;
+}
+
+.tagline {
+  color: #FF671D;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 16px;
+}
+
+.hint {
+  color: #b9b9c0;
+  font-size: 15px;
+  margin: 0 0 10px;
+}
+
+.task {
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+/* All buttons: full width, big tap targets */
+button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  font-family: inherit;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Major picker: two columns of dark buttons, picked one turns orange */
+#major-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 18px 0 14px;
+}
+
+.major-btn {
+  background: #26262e;
+  color: #f2f2f2;
+  border: 2px solid #45454f;
+}
+
+.major-btn.selected {
+  border-color: #FF671D;
+  background: #3a2317;
+}
+
+#start-button {
+  background: #FF671D;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 16px;
+}
+
+#start-button:disabled {
+  background: #55555e;
+  cursor: default;
+}
+
+/* Station option buttons: white with an orange edge */
+.option-btn {
+  background: #ffffff;
+  color: #222222;
+  border: 2px solid #FF671D;
+  margin: 10px 0;
+}
+
+.option-btn:active {
+  background: #FF671D;
+  color: #ffffff;
+}
+
+/* Feedback box after a decision */
+#station-feedback {
+  background: #ffffff;
+  border: 2px solid #FF671D;
+  border-radius: 10px;
+  padding: 14px;
+  margin-top: 16px;
+}
+
+.chips {
+  font-weight: bold;
+}
+
+#continue-button,
+#play-again-button {
+  background: #FF671D;
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 14px;
+}
+
+/* Job card at the bottom of every station */
+.job-card {
+  background: #ffffff;
+  border-left: 6px solid #FF671D;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 12px 14px;
+  margin-top: 26px;
+}
+
+.job-heading {
+  color: #FF671D;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.job-card h3 {
+  margin: 6px 0 4px;
+}
+
+.job-card p {
+  margin: 4px 0;
+}
+
+.yours {
+  color: #FF671D;
+  font-weight: bold;
+}
+
+/* Station drawings (inline SVG) */
+#station-drawing svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 10px 0 14px;
+}
+
+.svg-tool {
+  fill: #8a8a93;
+}
+
+.svg-particle {
+  fill: #FF671D;
+}
+
+.svg-film {
+  fill: #FF671D;
+}
+
+.svg-wafer {
+  fill: #c9c9d1;
+}
+
+.svg-label {
+  fill: #666666;
+  font-size: 13px;
+}
+
+/* Results screen */
+.yield-label {
+  color: #b9b9c0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  margin: 24px 0 0;
+}
+
+.big-number {
+  color: #FF671D;
+  font-size: 68px;
+  font-weight: bold;
+  margin: 0 0 10px;
+}
