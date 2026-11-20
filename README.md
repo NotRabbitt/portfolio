@@ -2,6 +2,7 @@
 
 Study tools and games I build, on one page.
 
+- **Flagship project**: Bluetooth hardware, in design. Details stay private until the first prototype exists.
 - **Better Canvas**: a read-only Canvas dashboard that answers one question: what do I do next?
 - **Desk**: a desk app that turns your calendar, Canvas and notes into one calm plan for today.
 - **Fab Run**: a web game about how a chip gets made, and who makes it. Playable on the site.

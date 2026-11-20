@@ -2,7 +2,7 @@
 // The HTML and CSS are written into one file ahead of time, so the first screen needs no JavaScript.
 import { cpSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 
-const { owner, projects } = JSON.parse(readFileSync("projects.json", "utf8"));
+const { owner, flagship, projects } = JSON.parse(readFileSync("projects.json", "utf8"));
 const { version } = JSON.parse(readFileSync("package.json", "utf8"));
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -56,12 +56,29 @@ function section(p) {
 </section>`;
 }
 
-// A game hosted on this site opens straight away; anything else goes to its section.
-const bioLink = (p) => {
-  const t = p.theme;
+// The signal trace is the brand mark: one line, drawn in the hero and again on the flagship.
+const trace = `<svg class="trace" viewBox="0 0 420 200" fill="none" aria-hidden="true"><path class="trace-base" d="M0 100h420"/><path class="trace-line" pathLength="1" d="M0 100h60l14-60 22 120 22-150 22 170 20-110 16 50 14-20h40l12-40 18 80 16-60 12 20h132"/></svg>`;
+const num = (i) => String(i).padStart(2, "0");
+
+// Link row: the flagship is 01, then each project. A game hosted on this site opens straight away.
+const bioLink = (p, i) => {
   const href = p.links.try.startsWith("play/") ? link(p.links.try) : `#${esc(p.id)}`;
-  return `<a href="${href}" style="background:${esc(t.background)};color:${esc(t.text)};font-family:${esc(t.headFont || t.font)}">${esc(p.name)}</a>`;
+  return `<a href="${href}" style="--swatch:${esc(p.theme.accent)}"><small>${num(i + 2)} · ${esc(p.kind)}</small>${esc(p.name)}</a>`;
 };
+
+// A teaser: it names the field and the stage, and nothing about what the thing does.
+const flagshipSection = `<section class="flagship" id="flagship">
+  <div class="flagship-inner">
+    <p class="flagship-label">01 · ${esc(flagship.label)}</p>
+    <h2>${esc(flagship.name)}</h2>
+    <p class="flagship-pitch">${esc(flagship.pitch)}</p>
+    ${trace}
+    <dl>
+      ${flagship.facts.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("\n      ")}
+    </dl>
+    <p class="flagship-note">${esc(flagship.note)}</p>
+  </div>
+</section>`;
 
 const html = `<!doctype html>
 <html lang="en">
@@ -70,9 +87,9 @@ const html = `<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(owner.name)}</title>
 <meta name="description" content="${esc(owner.line)}">
-<meta name="theme-color" content="#F47920">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23F47920'/%3E%3Cpath d='M4 13V3h2l4 6.5V3h2v10h-2L6 6.5V13z'/%3E%3C/svg%3E">
-<link rel="preload" href="fonts/schibsted-grotesk-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#0B0E12">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230B0E12'/%3E%3Cpath fill='%23FF7A1A' d='M6.5 3h3L9 9.5H7zM6.7 11h2.6v2.5H6.700z'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/jetbrains-mono-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 ${readFileSync("styles.css", "utf8")}</style>
 <script>document.documentElement.classList.add("js")</script>
@@ -80,13 +97,17 @@ ${readFileSync("styles.css", "utf8")}</style>
 </head>
 <body>
 <header class="hero">
-  <h1 style="--chars:${Math.max(...owner.name.split(" ").map((w) => w.length))}">${esc(owner.name)}</h1>
+  <div class="hero-top"><span><b>●</b> ${esc(owner.name)}</span><span>${esc(owner.fields)}</span></div>
+  ${trace}
+  <h1 aria-label="${esc(owner.name)}" style="--chars:${owner.wordmark.length}"><span aria-hidden="true"><i>${esc(owner.wordmark[0])}</i>${esc(owner.wordmark.slice(1))}</span></h1>
   <p class="hero-line">${esc(owner.line)}</p>
 </header>
 <nav class="bio" aria-label="Projects">
+  <a class="bio-flag" href="#flagship"><small>01 · ${esc(flagship.label)}</small>${esc(flagship.name)}</a>
   ${projects.map(bioLink).join("\n  ")}
 </nav>
 <main>
+${flagshipSection}
 ${projects.map(section).join("\n")}
 </main>
 <footer class="site-foot">&copy; ${new Date().getFullYear()} ${esc(owner.name)}. All rights reserved. Portfolio ${esc(version)}</footer>

@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Static portfolio site generated from projects.json.",
   "scripts": {
     "build": "node build.mjs",

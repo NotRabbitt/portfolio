@@ -2,7 +2,33 @@
   "owner": {
     "name": "NotRabbitt",
     "github": "NotRabbitt",
-    "line": "I build the study tools and games I wish my classes came with."
+    "wordmark": "!rabbitt",
+    "fields": "software · games · hardware",
+    "line": "I build the study tools and games I wish my classes came with. Now building hardware too."
+  },
+  "flagship": {
+    "label": "Flagship · in design",
+    "name": "Flagship project",
+    "pitch": "Bluetooth hardware. An early-stage concept, in design now.",
+    "note": "Details stay private until the first prototype exists.",
+    "facts": [
+      [
+        "Type",
+        "Hardware and firmware"
+      ],
+      [
+        "Field",
+        "Bluetooth"
+      ],
+      [
+        "Stage",
+        "Research done, design in progress"
+      ],
+      [
+        "Next",
+        "First prototype"
+      ]
+    ]
   },
   "projects": [
     {
@@ -40,7 +66,8 @@
         "texture": "dot-grid",
         "reveal": "type",
         "statusStyle": "stamp"
-      }
+      },
+      "kind": "Web app"
     },
     {
       "id": "desk",
@@ -79,7 +106,8 @@
         "texture": "particles",
         "reveal": "circle",
         "statusStyle": "chip"
-      }
+      },
+      "kind": "Desktop app"
     },
     {
       "id": "fab-run",
@@ -113,7 +141,8 @@
         "texture": "wafer",
         "reveal": "none",
         "statusStyle": "chip"
-      }
+      },
+      "kind": "Web game"
     }
   ]
 }
